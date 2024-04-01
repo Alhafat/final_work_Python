@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block content %}
+    <h2>Search Results</h2>
+    <p>Showing results for: {{ request.GET.q }}</p>
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+category_search_results.html
+htmlCopy code
+{% extends 'base.html' %}
+
+{% block title %}
+    Category Search Results
+{% endblock %}
+
+{% block content %}
+    <h2>Category: {{ category.name }}</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
