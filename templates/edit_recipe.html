@@ -8,11 +8,11 @@
 {% block content %}
     <h2>Edit Recipe</h2>
     {% if messages %}
-    <ul class="messages">
+    <script>
         {% for message in messages %}
-            <li>{{ message }}</li>
+            showAlert("{{ message.message }}", "{{ message.tags }}");
         {% endfor %}
-    </ul>
+    </script>
     {% endif %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}

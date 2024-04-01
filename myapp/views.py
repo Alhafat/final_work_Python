@@ -1,3 +1,4 @@
+from django.http import HttpResponseForbidden
 from myapp.models import Recipe, Category
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout as django_logout
@@ -12,6 +13,7 @@ import os
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib import messages
+from django.contrib.auth.decorators import user_passes_test
 
 
 def home(request):
@@ -48,9 +50,11 @@ def add_recipe(request):
 @login_required
 def recipe_edit(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
-    if request.user != recipe.author:
-        messages.error(request, 'Вы не имеете права на редактирование этого рецепта.')
-        return redirect('recipe_detail', recipe_id=recipe_id)
+    if not can_edit_recipe(request, recipe_id):
+        return HttpResponseForbidden("You are not allowed to edit this recipe.")
+    # if request.user != recipe.author:
+    #     messages.error(request, 'Вы не имеете права на редактирование этого рецепта.')
+    #     return redirect('recipe_detail', recipe_id=recipe_id)
 
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES, instance=recipe)
@@ -150,9 +154,11 @@ def delete_file(file_path):
 @login_required
 def delete_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
-    if request.user != recipe.author:
-        messages.error(request, 'Вы не имеете права на удаление этого рецепта.')
-        return redirect('recipe_detail', recipe_id=recipe_id)
+    if not can_delete_recipe(request, recipe_id):
+        return HttpResponseForbidden("You are not allowed to delete this recipe.")
+    # if request.user != recipe.author:
+    #     messages.error(request, 'Вы не имеете права на удаление этого рецепта.')
+    #     return redirect('recipe_detail', recipe_id=recipe_id)
 
     if request.method == 'POST':
         if recipe.image:
@@ -163,3 +169,15 @@ def delete_recipe(request, recipe_id):
         messages.success(request, 'Рецепт успешно удален.')
         return redirect('home')
     return render(request, 'delete_recipe.html', {'recipe': recipe})
+
+
+@user_passes_test(lambda u: u.is_authenticated)
+def can_edit_recipe(request, recipe_id):
+    recipe = get_object_or_404(Recipe, pk=recipe_id)
+    return request.user == recipe.author
+
+
+@user_passes_test(lambda u: u.is_authenticated)
+def can_delete_recipe(request, recipe_id):
+    recipe = get_object_or_404(Recipe, pk=recipe_id)
+    return request.user == recipe.author

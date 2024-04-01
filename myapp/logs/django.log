@@ -4888,3 +4888,236 @@ Watching for file changes with StatReloader
 You're accessing the development server over HTTPS, but it only supports HTTP.
 code 400, message Bad request version ('\x02h2\x08http/1.1\x00\x12\x00\x00\x00')
 You're accessing the development server over HTTPS, but it only supports HTTP.
+Watching for file changes with StatReloader
+You're accessing the development server over HTTPS, but it only supports HTTP.
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x1b\x00\x03\x02\x00\x02\x00')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('\x83\x81')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+"GET / HTTP/1.1" 200 1190
+"GET /static/js/messages.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4084
+"GET / HTTP/1.1" 200 1190
+"GET /static/js/messages.js HTTP/1.1" 200 466
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4084
+"GET /accounts/login/ HTTP/1.1" 200 1645
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1190
+"GET /static/js/messages.js HTTP/1.1" 200 466
+"GET /recipe/86/ HTTP/1.1" 200 1426
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 200 60076
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/recipe/edit/86/ HTTP/1.1" 200 1645
+"GET /recipe/86/ HTTP/1.1" 200 1426
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/recipe/delete/86/ HTTP/1.1" 200 1645
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/recipe/edit/86/ HTTP/1.1" 200 1645
+"POST /accounts/login/?next=/recipe/edit/86/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1287
+"GET /recipe/86/ HTTP/1.1" 200 1398
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1578
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1578
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1578
+"GET /recipe/86/ HTTP/1.1" 200 1398
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1578
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1566
+"GET /recipe/86/ HTTP/1.1" 200 1403
+"GET /static/js/messages.js HTTP/1.1" 304 0
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1734
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1734
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1734
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1734
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/86/ HTTP/1.1" 200 1405
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1585
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1573
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/86/ HTTP/1.1" 200 1403
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 304 0
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1758
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1403
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1724
+"GET /recipe/86/ HTTP/1.1" 200 1403
+"GET /static/js/messages.js HTTP/1.1" 304 0
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1763
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1739
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1763
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1739
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1763
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1739
+"GET / HTTP/1.1" 200 1162
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1458
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1833
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1809
+"GET /recipe/86/ HTTP/1.1" 200 1458
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1825
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1801
+"GET /recipe/86/ HTTP/1.1" 200 1684
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 2066
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 2042
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 2066
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1825
+"GET /recipe/86/ HTTP/1.1" 200 1458
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1774
+"GET /recipe/86/ HTTP/1.1" 200 1402
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1582
+"GET /recipe/delete/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1570
+"GET /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1774
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 304 0
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /recipe/86/ HTTP/1.1" 200 1407
+"GET /recipe/86/ HTTP/1.1" 200 1407
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1407
+"GET /recipe/86/ HTTP/1.1" 200 1407
+"GET /static/js/messages.js HTTP/1.1" 304 0
+Forbidden: /recipe/edit/86/
+"GET /recipe/edit/86/ HTTP/1.1" 403 40
+Forbidden: /recipe/delete/86/
+"GET /recipe/delete/86/ HTTP/1.1" 403 42
+Forbidden: /recipe/edit/86/
+"GET /recipe/edit/86/ HTTP/1.1" 403 40
+"GET /recipe/86/ HTTP/1.1" 200 1407
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1407
+Forbidden: /recipe/edit/86/
+"GET /recipe/edit/86/ HTTP/1.1" 403 40
+"GET /recipe/86/ HTTP/1.1" 200 1314
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1314
+"GET / HTTP/1.1" 200 1162
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1190
+"GET /accounts/login/ HTTP/1.1" 200 1645
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1287
+"GET /recipe/86/ HTTP/1.1" 200 1586
+"GET /recipe/edit/86/ HTTP/1.1" 200 2275
+"POST /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1876
+"GET /recipe/delete/86/ HTTP/1.1" 200 1191
+"GET /recipe/86/ HTTP/1.1" 200 1586
+"GET /recipe/edit/86/ HTTP/1.1" 200 2275
+"GET / HTTP/1.1" 200 1162
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1586
+"GET / HTTP/1.1" 200 1162
+"GET / HTTP/1.1" 200 1162
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1589
+"GET /recipe/edit/86/ HTTP/1.1" 200 2270
+"GET / HTTP/1.1" 200 1162
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1190
+"GET /accounts/login/ HTTP/1.1" 200 1645
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1287
+"GET /recipe/86/ HTTP/1.1" 200 1317
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/86/ HTTP/1.1" 200 1317
+"GET / HTTP/1.1" 200 1162
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1190
+"GET /accounts/login/ HTTP/1.1" 200 1645
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1287
+"GET /recipe/86/ HTTP/1.1" 200 1589
+"GET /recipe/edit/86/ HTTP/1.1" 200 2270
+"POST /recipe/edit/86/ HTTP/1.1" 302 0
+"GET /recipe/86/ HTTP/1.1" 200 1734
+"GET /recipe/delete/86/ HTTP/1.1" 200 1186
+"POST /recipe/delete/86/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1189
+"GET /recipe/add/ HTTP/1.1" 200 1941
+"POST /recipe/add/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1162
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/87/ HTTP/1.1" 200 1583
+"GET /recipe/delete/87/ HTTP/1.1" 200 1186
+"POST /recipe/delete/87/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1189
+"GET /recipe/add/ HTTP/1.1" 200 1941
+"POST /recipe/add/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1162
+"GET / HTTP/1.1" 200 1162
+"GET /recipe/88/ HTTP/1.1" 200 1584
+"GET /recipe/delete/88/ HTTP/1.1" 200 1191
+"POST /recipe/delete/88/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1189
+"GET /recipe/add/ HTTP/1.1" 200 1941
+"POST /recipe/add/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1162

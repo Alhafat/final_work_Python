@@ -2,6 +2,14 @@
 {% load static %}
 {% block content %}
     <h2>{{ recipe.title }}</h2>
+{#    для использования всплывающих сообщений о запрете изменения и удаления раскоментировать#}
+    {% if messages %}
+    <script>
+        {% for message in messages %}
+            showAlert("{{ message.message }}", "{{ message.tags }}");
+        {% endfor %}
+    </script>
+    {% endif %}
     {% if recipe.image %}
         <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
     {% endif %}
@@ -15,10 +23,13 @@
     </ul>
     <p>Author: {{ recipe.author }}</p>
 
-    <!-- ссылки на страницы редактирования и удаления рецепта -->
-    <p>
-        <a href="{% url 'edit_recipe' recipe.id %}">Edit</a> |
-        <a href="{% url 'delete_recipe' recipe.id %}">Delete</a>
-    </p>
-<a href="{% url 'home' %}">Home</a>
+    <!-- Проверяем, является ли текущий пользователь автором рецепта -->
+    {% if user.is_authenticated and user == recipe.author %}
+        <!-- Если да, то отображаем ссылки на редактирование и удаление рецепта -->
+        <p>
+            <a href="{% url 'edit_recipe' recipe.id %}">Edit</a> |
+            <a href="{% url 'delete_recipe' recipe.id %}">Delete</a>
+        </p>
+    {% endif %}
+    <a href="{% url 'home' %}">Home</a>
 {% endblock %}

@@ -8,12 +8,12 @@
 {% block content %}
     <h2>Delete Recipe</h2>
     {% if messages %}
-    <ul class="messages">
+    <script>
         {% for message in messages %}
-            <li>{{ message }}</li>
+            showAlert("{{ message.message }}", "{{ message.tags }}");
         {% endfor %}
-    </ul>
-{% endif %}
+    </script>
+    {% endif %}
     <p>Вы уверены, что хотите удалить этот рецепт?</p>
     <form method="post">
         {% csrf_token %}
