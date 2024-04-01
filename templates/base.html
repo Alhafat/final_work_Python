@@ -1,8 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <script src="{% static 'js/messages.js' %}"></script>
+    <style>
+        .alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        .alert.success {
+            background-color: #4CAF50;
+        }
+        .alert.error {
+            background-color: #f44336;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,5 +38,16 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    {% if messages %}
+    <script>
+        {% for message in messages %}
+            showAlert("{{ message.message }}", "{{ message.tags }}");
+        {% endfor %}
+    </script>
+    {% endif %}
 </body>
 </html>
+
+
+

@@ -4,33 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cee31c68-31fb-4d89-88e1-6383a4469fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/django_recipes.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_recipes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_recipes/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_recipes/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_recipes/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_recipes/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/delete_recipe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit_recipe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recipe_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recipe_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/search_results.html" afterDir="false" />
+    <list default="true" id="cee31c68-31fb-4d89-88e1-6383a4469fc7" name="Changes" comment="final work 01.04.2024">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +44,7 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "D:/учеба/19 Django_Python",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -120,11 +95,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711962705638</updated>
-      <workItem from="1711962708603" duration="22923000" />
+      <workItem from="1711962708603" duration="23767000" />
     </task>
+    <task id="LOCAL-00001" summary="final work 01.04.2024">
+      <option name="closed" value="true" />
+      <created>1711986917003</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711986917003</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="final work 01.04.2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="final work 01.04.2024" />
   </component>
 </project>

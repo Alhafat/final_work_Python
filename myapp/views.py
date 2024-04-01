@@ -1,9 +1,7 @@
-import os
 from myapp.models import Recipe, Category
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout as django_logout
 from django.contrib.auth import authenticate, login
-from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from myapp.models import Recipe
@@ -11,6 +9,9 @@ from myapp.forms import RecipeForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 import os
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.views.generic.edit import UpdateView, DeleteView
+from django.contrib import messages
 
 
 def home(request):
@@ -21,6 +22,12 @@ def home(request):
 def recipe_detail(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
     return render(request, 'recipe_detail.html', {'recipe': recipe})
+
+
+def my_view(request):
+    # Some logic
+    messages.success(request, 'Рецепт успешно изменен.')
+    return redirect('home')
 
 
 @login_required
@@ -36,6 +43,24 @@ def add_recipe(request):
         form = RecipeForm()
 
     return render(request, 'recipe_form.html', {'form': form})
+
+
+@login_required
+def recipe_edit(request, recipe_id):
+    recipe = get_object_or_404(Recipe, pk=recipe_id)
+    if request.user != recipe.author:
+        messages.error(request, 'Вы не имеете права на редактирование этого рецепта.')
+        return redirect('recipe_detail', recipe_id=recipe_id)
+
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES, instance=recipe)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Рецепт успешно отредактирован.')
+            return redirect('recipe_detail', recipe_id=recipe_id)
+    else:
+        form = RecipeForm(instance=recipe)
+    return render(request, 'edit_recipe.html', {'form': form})
 
 
 def search(request):
@@ -87,43 +112,33 @@ def logout(request):
     return redirect('home')
 
 
-@login_required
-def edit_recipe(request, recipe_id):
-    # Получаем объект рецепта по его идентификатору или возвращаем ошибку 404, если рецепт не найден
-    recipe = get_object_or_404(Recipe, pk=recipe_id)
+class EditRecipeView(PermissionRequiredMixin, UpdateView):
+    model = Recipe
+    template_name = 'edit_recipe.html'
+    form_class = RecipeForm
+    success_url = '/'
 
-    # Получаем путь к старому изображению рецепта
-    old_image_path = os.path.join(settings.MEDIA_ROOT, str(recipe.image))
+    # Установите необходимые права доступа для этого представления
+    permission_required = 'myapp.change_recipe'  # Изменение рецепта
 
-    if request.method == 'POST':
+    def has_permission(self):
+        # Проверьте, является ли текущий пользователь автором рецепта
+        recipe = self.get_object()
+        return self.request.user == recipe.author
 
-        # Создаем форму рецепта на основе полученных данных из POST-запроса
-        form = RecipeForm(request.POST, request.FILES, instance=recipe)
 
-        # Проверяем, была ли форма заполнена корректно
-        if form.is_valid():
+class DeleteRecipeView(PermissionRequiredMixin, DeleteView):
+    model = Recipe
+    success_url = '/'
+    template_name = 'delete_recipe.html'
 
-            # Сохраняем данные из формы в переменную new_recipe, но пока не сохраняем в базу данных
-            new_recipe = form.save(commit=False)
+    # Установите необходимые права доступа для этого представления
+    permission_required = 'myapp.delete_recipe'  # Удаление рецепта
 
-            # Проверяем, было ли передано новое изображение
-            if old_image_path in request.FILES:
-                # Если изображение было передано в запросе, удаляем старое изображение (если есть)
-                if recipe.image:
-                    recipe.image.delete()
-                    delete_file(old_image_path)
-
-            # Сохранение изменений в рецепте, включая фото
-            new_recipe.save()
-
-            # Перенаправляем пользователя на страницу с деталями рецепта
-            return redirect('recipe_detail', recipe_id=recipe_id)
-    else:
-        # Если метод запроса не POST, создаем пустую форму на основе текущего рецепта
-        form = RecipeForm(instance=recipe)
-
-    # Отображаем шаблон страницы редактирования рецепта с заполненной формой
-    return render(request, 'edit_recipe.html', {'form': form})
+    def has_permission(self):
+        # Проверьте, является ли текущий пользователь автором рецепта
+        recipe = self.get_object()
+        return self.request.user == recipe.author
 
 
 def delete_file(file_path):
@@ -135,14 +150,16 @@ def delete_file(file_path):
 @login_required
 def delete_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
+    if request.user != recipe.author:
+        messages.error(request, 'Вы не имеете права на удаление этого рецепта.')
+        return redirect('recipe_detail', recipe_id=recipe_id)
+
     if request.method == 'POST':
-        # Удаляем фото перед удалением рецепта
         if recipe.image:
-            # Получаем путь к файлу изображения
             image_path = os.path.join(settings.MEDIA_ROOT, str(recipe.image))
-            recipe.image.delete()  # Удаление только фото, не всего объекта
-            # Удаляем файл из файловой системы
+            recipe.image.delete()
             delete_file(image_path)
-        recipe.delete()  # Удаление всего рецепта
+        recipe.delete()
+        messages.success(request, 'Рецепт успешно удален.')
         return redirect('home')
     return render(request, 'delete_recipe.html', {'recipe': recipe})
