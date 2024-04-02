@@ -2,30 +2,20 @@
 {% load static %}
 {% block content %}
     <h2>{{ recipe.title }}</h2>
-{#    для использования всплывающих сообщений о запрете изменения и удаления раскоментировать#}
-    {% if messages %}
-    <script>
-        {% for message in messages %}
-            showAlert("{{ message.message }}", "{{ message.tags }}");
-        {% endfor %}
-    </script>
-    {% endif %}
     {% if recipe.image %}
         <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
     {% endif %}
     <p>{{ recipe.description }}</p>
     <p>Preparation Time: {{ recipe.preparation_time }}</p>
-    <p>Preparation Steps:</p>
+    <p>Categories:</p>
     <ul>
-        {% for step in recipe.preparation_steps %}
-            <li>{{ step }}</li>
-        {% endfor %}
+        <li>{{ category.name }}</li>
     </ul>
+    <p>Preparation Steps:</p>
+    <p>{{ recipe.steps|linebreaks }}</p>
     <p>Author: {{ recipe.author }}</p>
 
-    <!-- Проверяем, является ли текущий пользователь автором рецепта -->
     {% if user.is_authenticated and user == recipe.author %}
-        <!-- Если да, то отображаем ссылки на редактирование и удаление рецепта -->
         <p>
             <a href="{% url 'edit_recipe' recipe.id %}">Edit</a> |
             <a href="{% url 'delete_recipe' recipe.id %}">Delete</a>
@@ -33,3 +23,4 @@
     {% endif %}
     <a href="{% url 'home' %}">Home</a>
 {% endblock %}
+

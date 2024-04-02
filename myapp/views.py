@@ -14,6 +14,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
+from myapp.models import RecipeCategory
 
 
 def home(request):
@@ -23,7 +24,9 @@ def home(request):
 
 def recipe_detail(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
-    return render(request, 'recipe_detail.html', {'recipe': recipe})
+    categories = RecipeCategory.objects.get(recipe_id=recipe_id)
+    category = Category.objects.get(pk=categories.category_id)
+    return render(request, 'recipe_detail.html', {'recipe': recipe, 'category': category})
 
 
 def my_view(request):
@@ -40,31 +43,38 @@ def add_recipe(request):
             new_recipe = form.save(commit=False)
             new_recipe.author = request.user
             new_recipe.save()
+            RecipeCategory(recipe_id=new_recipe.id, category_id=request.POST['categories']).save()
+            # form.save_m2m()  # Сохраняем связи ManyToMany
             return redirect('home')
     else:
         form = RecipeForm()
-
-    return render(request, 'recipe_form.html', {'form': form})
+    return render(request, 'recipe_form.html', {'form': form, 'categories': Category.objects.all()})
 
 
 @login_required
 def recipe_edit(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
+    # print('hello')
     if not can_edit_recipe(request, recipe_id):
         return HttpResponseForbidden("You are not allowed to edit this recipe.")
-    # if request.user != recipe.author:
-    #     messages.error(request, 'Вы не имеете права на редактирование этого рецепта.')
-    #     return redirect('recipe_detail', recipe_id=recipe_id)
 
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES, instance=recipe)
+
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Рецепт успешно отредактирован.')
+            # Сохраняем форму без сохранения связанных категорий
+            recipe = form.save(commit=False)
+            recipe.save()
+            if request.POST.get('categories'):
+                connection = get_object_or_404(RecipeCategory, recipe_id=recipe_id)
+                connection.category_id = request.POST['categories']
+                connection.save()
+            # Сохраняем связанные категории
+            # form.save_m2m()
             return redirect('recipe_detail', recipe_id=recipe_id)
     else:
         form = RecipeForm(instance=recipe)
-    return render(request, 'edit_recipe.html', {'form': form})
+    return render(request, 'edit_recipe.html', {'form': form, 'recipe': recipe})
 
 
 def search(request):
@@ -156,9 +166,6 @@ def delete_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     if not can_delete_recipe(request, recipe_id):
         return HttpResponseForbidden("You are not allowed to delete this recipe.")
-    # if request.user != recipe.author:
-    #     messages.error(request, 'Вы не имеете права на удаление этого рецепта.')
-    #     return redirect('recipe_detail', recipe_id=recipe_id)
 
     if request.method == 'POST':
         if recipe.image:

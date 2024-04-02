@@ -7,16 +7,10 @@
 
 {% block content %}
     <h2>Edit Recipe</h2>
-    {% if messages %}
-    <script>
-        {% for message in messages %}
-            showAlert("{{ message.message }}", "{{ message.tags }}");
-        {% endfor %}
-    </script>
-    {% endif %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Сохранить изменения</button>
+        <button type="submit">Save changes</button>
     </form>
 {% endblock %}
+

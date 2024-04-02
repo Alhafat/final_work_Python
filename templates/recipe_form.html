@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
-
 {% block title %}
     Add/Edit Recipe
 {% endblock %}
-
 {% block content %}
     <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Recipe</h2>
     <form method="post" enctype="multipart/form-data">

@@ -1,30 +1,29 @@
-from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Recipe(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    steps = models.TextField()  # Добавлено поле steps
+    steps = models.TextField()
     preparation_time = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='recipe_images/', blank=True, null=True, verbose_name='Изображение')
+    image = models.ImageField(upload_to='recipe_images/', blank=True, null=True, verbose_name='Image')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
 
     def delete(self, *args, **kwargs):
-        # Удаляем изображение перед удалением объекта
         if self.image:
             self.image.delete()
         super().delete(*args, **kwargs)
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return f' self: {self.name}'
+        return self.name
 
 
 class RecipeCategory(models.Model):
@@ -32,4 +31,4 @@ class RecipeCategory(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'recipe: {self.recipe}, category: {self.category}'
+        return f'Recipe: {self.recipe.title}, Category: {self.category.name}'
