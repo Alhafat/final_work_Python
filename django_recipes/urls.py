@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),  # Подключаем URL-адреса приложения recipesapp
+    # path('__debug__/', include('debug_toolbar.urls'))
 ]
 
 # Добавьте это в конец файла

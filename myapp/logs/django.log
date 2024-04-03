@@ -8095,3 +8095,96 @@ Watching for file changes with StatReloader
 "GET /admin/jsi18n/ HTTP/1.1" 200 17546
 D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\debug_toolbar\middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\debug_toolbar\toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+"GET / HTTP/1.1" 500 128940
+D:\учеба\DjangoProject\django_recipes\django_recipes\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 10962
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 10992
+"GET /accounts/login/ HTTP/1.1" 200 11502
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 11092
+D:\учеба\DjangoProject\django_recipes\django_recipes\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1163
+"GET /recipe/102/ HTTP/1.1" 200 3677
+Not Found: /media/recipe_images/big_215762.jpg
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 404 179
+"GET /recipe/102/ HTTP/1.1" 200 3677
+Not Found: /media/recipe_images/big_215762.jpg
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 404 179
+D:\учеба\DjangoProject\django_recipes\django_recipes\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /recipe/102/ HTTP/1.1" 200 13511
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 200 60076
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+"GET /recipe/102/ HTTP/1.1" 200 13510
+"GET /__debug__/render_panel/?store_id=89134cec7e424bac9468924670ca6a35&panel_id=SQLPanel HTTP/1.1" 200 82796
+"GET /__debug__/render_panel/?store_id=89134cec7e424bac9468924670ca6a35&panel_id=StaticFilesPanel HTTP/1.1" 200 35791
+"GET /__debug__/render_panel/?store_id=89134cec7e424bac9468924670ca6a35&panel_id=TemplatesPanel HTTP/1.1" 200 6455
+"GET / HTTP/1.1" 200 10967
+"GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+"GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+"GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+"GET /__debug__/render_panel/?store_id=07dabd4c2fa348808b491a101fd439a2&panel_id=TemplatesPanel HTTP/1.1" 200 6060
