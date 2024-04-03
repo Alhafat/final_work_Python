@@ -7814,3 +7814,284 @@ Watching for file changes with StatReloader
 "GET /admin/ HTTP/1.1" 200 9032
 "GET / HTTP/1.1" 200 1157
 "GET /recipe/add/ HTTP/1.1" 200 4114
+"GET /recipe/add/ HTTP/1.1" 200 4114
+"GET /recipe/add/ HTTP/1.1" 200 4114
+"GET /recipe/102/ HTTP/1.1" 200 3537
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 304 0
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1191
+"GET /accounts/login/ HTTP/1.1" 200 1672
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1288
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /recipe/edit/102/ HTTP/1.1" 200 6696
+"GET /recipe/edit/102/ HTTP/1.1" 200 6709
+"GET /recipe/edit/102/ HTTP/1.1" 200 6697
+"GET /recipe/edit/102/ HTTP/1.1" 200 6699
+"GET /recipe/edit/102/ HTTP/1.1" 200 6715
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1163
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /media/recipe_images/big_215762.jpg HTTP/1.1" 304 0
+Internal Server Error: /recipe/edit/102/
+Traceback (most recent call last):
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\django_recipes\myapp\views.py", line 58, in recipe_edit
+    if not can_edit_recipe(request, recipe_id):
+           ^^^^^^^^^^^^^^^
+NameError: name 'can_edit_recipe' is not defined
+"GET /recipe/edit/102/ HTTP/1.1" 500 71552
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /recipe/edit/102/ HTTP/1.1" 200 6675
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /recipe/edit/102/ HTTP/1.1" 200 6675
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1191
+"GET /accounts/login/ HTTP/1.1" 200 1672
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1288
+"GET /recipe/102/ HTTP/1.1" 200 3543
+"GET / HTTP/1.1" 200 1163
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1191
+"GET /accounts/login/ HTTP/1.1" 200 1672
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1288
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /recipe/edit/102/ HTTP/1.1" 200 6675
+"POST /recipe/edit/102/ HTTP/1.1" 302 0
+"GET /recipe/102/ HTTP/1.1" 200 3677
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /recipe/edit/102/ HTTP/1.1" 200 6675
+"POST /recipe/edit/102/ HTTP/1.1" 302 0
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1191
+"GET /accounts/login/ HTTP/1.1" 200 1672
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1288
+"GET /recipe/102/ HTTP/1.1" 200 3543
+"GET / HTTP/1.1" 200 1163
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1191
+"GET /accounts/login/ HTTP/1.1" 200 1672
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1288
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /recipe/edit/102/ HTTP/1.1" 200 6675
+"POST /recipe/edit/102/ HTTP/1.1" 302 0
+"GET /recipe/102/ HTTP/1.1" 200 3677
+"GET /recipe/delete/102/ HTTP/1.1" 200 1191
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /recipe/delete/102/ HTTP/1.1" 200 1191
+"GET / HTTP/1.1" 200 1163
+"GET /recipe/add/ HTTP/1.1" 200 4120
+"POST /recipe/add/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1288
+"GET /recipe/103/ HTTP/1.1" 200 1420
+"GET /media/recipe_images/big_172938.jpg HTTP/1.1" 200 43272
+"GET /recipe/delete/103/ HTTP/1.1" 200 1191
+Internal Server Error: /recipe/delete/103/
+Traceback (most recent call last):
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\учеба\DjangoProject\django_recipes\myapp\views.py", line 170, in delete_recipe
+    delete_file(image_path)
+    ^^^^^^^^^^^
+NameError: name 'delete_file' is not defined. Did you mean: 'delete_recipe'?
+"POST /recipe/delete/103/ HTTP/1.1" 500 72552
+D:\учеба\DjangoProject\django_recipes\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /recipe/delete/103/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 1292
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3941
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 4214
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 4214
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 4208
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 9032
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/9/change/ HTTP/1.1" 200 14963
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/102/change/ HTTP/1.1" 200 16966
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/group/ HTTP/1.1" 200 8962
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/group/ HTTP/1.1" 200 8962
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/group/ HTTP/1.1" 200 8962
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/group/ HTTP/1.1" 200 8962
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/group/ HTTP/1.1" 200 8962
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/group/ HTTP/1.1" 200 8962
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipe/ HTTP/1.1" 200 10161
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/recipecategory/ HTTP/1.1" 200 10312
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/myapp/category/ HTTP/1.1" 200 22443
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+"GET /admin/auth/user/ HTTP/1.1" 200 14632
+"GET /admin/jsi18n/ HTTP/1.1" 200 17546
+D:\учеба\DjangoProject\django_recipes\myapp\admin.py changed, reloading.
+Watching for file changes with StatReloader

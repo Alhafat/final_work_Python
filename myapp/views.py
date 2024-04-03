@@ -44,7 +44,6 @@ def add_recipe(request):
             new_recipe.author = request.user
             new_recipe.save()
             RecipeCategory(recipe_id=new_recipe.id, category_id=request.POST['categories']).save()
-            # form.save_m2m()  # Сохраняем связи ManyToMany
             return redirect('home')
     else:
         form = RecipeForm()
@@ -54,7 +53,6 @@ def add_recipe(request):
 @login_required
 def recipe_edit(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
-    # print('hello')
     if not can_edit_recipe(request, recipe_id):
         return HttpResponseForbidden("You are not allowed to edit this recipe.")
 
@@ -69,8 +67,6 @@ def recipe_edit(request, recipe_id):
                 connection = get_object_or_404(RecipeCategory, recipe_id=recipe_id)
                 connection.category_id = request.POST['categories']
                 connection.save()
-            # Сохраняем связанные категории
-            # form.save_m2m()
             return redirect('recipe_detail', recipe_id=recipe_id)
     else:
         form = RecipeForm(instance=recipe)
@@ -126,33 +122,33 @@ def logout(request):
     return redirect('home')
 
 
-class EditRecipeView(PermissionRequiredMixin, UpdateView):
-    model = Recipe
-    template_name = 'edit_recipe.html'
-    form_class = RecipeForm
-    success_url = '/'
+# class EditRecipeView(PermissionRequiredMixin, UpdateView):
+#     model = Recipe
+#     template_name = 'edit_recipe.html'
+#     form_class = RecipeForm
+#     success_url = '/'
+#
+#     # Установите необходимые права доступа для этого представления
+#     permission_required = 'myapp.change_recipe'  # Изменение рецепта
+#
+#     def has_permission(self):
+#         # Проверьте, является ли текущий пользователь автором рецепта
+#         recipe = self.get_object()
+#         return self.request.user == recipe.author
 
-    # Установите необходимые права доступа для этого представления
-    permission_required = 'myapp.change_recipe'  # Изменение рецепта
 
-    def has_permission(self):
-        # Проверьте, является ли текущий пользователь автором рецепта
-        recipe = self.get_object()
-        return self.request.user == recipe.author
-
-
-class DeleteRecipeView(PermissionRequiredMixin, DeleteView):
-    model = Recipe
-    success_url = '/'
-    template_name = 'delete_recipe.html'
-
-    # Установите необходимые права доступа для этого представления
-    permission_required = 'myapp.delete_recipe'  # Удаление рецепта
-
-    def has_permission(self):
-        # Проверьте, является ли текущий пользователь автором рецепта
-        recipe = self.get_object()
-        return self.request.user == recipe.author
+# class DeleteRecipeView(PermissionRequiredMixin, DeleteView):
+#     model = Recipe
+#     success_url = '/'
+#     template_name = 'delete_recipe.html'
+#
+#     # Установите необходимые права доступа для этого представления
+#     permission_required = 'myapp.delete_recipe'  # Удаление рецепта
+#
+#     def has_permission(self):
+#         # Проверьте, является ли текущий пользователь автором рецепта
+#         recipe = self.get_object()
+#         return self.request.user == recipe.author
 
 
 def delete_file(file_path):
