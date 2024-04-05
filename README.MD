@@ -126,14 +126,3 @@ HTML/CSS - для создания пользовательского интер
 Проект развернут по адресу :
 
 https://alhafad.pythonanywhere.com/
-
-Учетные данные для проверки работоспособности сайта:
-
-124@mail.ru
-:2bxhvSr4jZryKP
-
-125@mail.ru
-qz_CwDrz2P35K-f
-
-admin
-Admin123456789
