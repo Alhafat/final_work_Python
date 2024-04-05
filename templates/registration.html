@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Registration</h2>
+    <h2>Страница регистрации</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Register</button>
+        <button type="submit">Зарегистрироваться</button>
     </form>
     <p>
-        <a href="{% url 'home' %}">Home page</a> <!-- Ссылка на страницу добавления нового рецепта -->
+        <a href="{% url 'home' %}">Главная страница</a> <!-- Ссылка на страницу добавления нового рецепта -->
     </p>
 {% endblock %}

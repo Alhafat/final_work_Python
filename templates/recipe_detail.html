@@ -6,14 +6,14 @@
         <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
     {% endif %}
     <p>{{ recipe.description }}</p>
-    <p>Preparation Time: {{ recipe.preparation_time }}</p>
-    <p>Categories:</p>
+    <p>Время приготовления: {{ recipe.preparation_time }}</p>
+    <p>Категория:</p>
     <ul>
         <li>{{ category.name }}</li>
     </ul>
-    <p>Preparation Steps:</p>
+    <p>Шаги приготовления и ингридиенты:</p>
     <p>{{ recipe.steps|linebreaks }}</p>
-    <p>Author: {{ recipe.author }}</p>
+    <p>Автор рецепта: {{ recipe.author }}</p>
 
     {% if user.is_authenticated and user == recipe.author %}
         <p>
@@ -21,6 +21,6 @@
             <a href="{% url 'delete_recipe' recipe.id %}">Delete</a>
         </p>
     {% endif %}
-    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'home' %}">Главная страница</a>
 {% endblock %}
 

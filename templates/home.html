@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Home Page</h2>
-    <h3>Featured Recipes</h3>
+    <h2>Главная страница</h2>
+    <h3>Рецепты</h3>
     <ul>
         {% for recipe in recipes %}
             <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'recipe_add' %}">Add New Recipe</a> <!-- Ссылка на страницу добавления нового рецепта -->
+    <button><a href="{% url 'recipe_add' %}" style="text-decoration: none;">Добавить новый рецепт</a></button> <!-- Ссылка на страницу добавления нового рецепта -->
 
 {% endblock %}

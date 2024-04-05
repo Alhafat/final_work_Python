@@ -8188,3 +8188,10 @@ Watching for file changes with StatReloader
 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
 "GET /__debug__/render_panel/?store_id=07dabd4c2fa348808b491a101fd439a2&panel_id=TemplatesPanel HTTP/1.1" 200 6060
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\django_recipes\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\учеба\DjangoProject\django_recipes\django_recipes\settings.py changed, reloading.
+Watching for file changes with StatReloader

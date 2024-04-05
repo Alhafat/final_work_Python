@@ -16,18 +16,19 @@ from django.apps import apps
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Указываем путь к папке, где будут храниться медиафайлы
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# # URL-адрес, который будет использоваться для обслуживания медиафайлов
+# MEDIA_URL = '/media/'
 
-# URL-адрес, который будет использоваться для обслуживания медиафайлов
-MEDIA_URL = '/media/'
+# # Указываем путь к папке, где будут храниться медиафайлы
+# # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# MEDIA_ROOT = BASE_DIR / 'media'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-)9o4^pwxsxym175g#)49p8sqwd4$e^z(x9y0b1vobtd)#10&6u'
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -171,12 +172,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+# URL-адрес, который будет использоваться для обслуживания медиафайлов
+MEDIA_URL = '/media/'
+
+# Указываем путь к папке, где будут храниться медиафайлы
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# MEDIA_ROOT = BASE_DIR / 'media'
+
+STATIC_URL = 'static/'
+
+# STATIC_ROOT = BASE_DIR / 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
+# В STATIC_ROOT = BASEDIR / 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Edit Recipe</h2>
+    <h2>Страница редактирования рецепта</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save changes</button>
+        <button type="submit">Сохранить изменения</button>
     </form>
 {% endblock %}
 
