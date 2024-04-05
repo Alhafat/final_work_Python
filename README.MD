@@ -50,26 +50,7 @@ pip install -r requirements.txt
 
 Теперь отредактируем wsgi файл.
 У вас должно получится примерно следующее:
-# +++++++++++ DJANGO +++++++++++
-# To use your own django app use code like this:
-import os
-import sys
-from dotenv import load_dotenv
-project_folder = os.path.expanduser('~/final_work_Python') # adjust as
-appropriate
-load_dotenv(os.path.join(project_folder, '.env'))
-## assuming your django settings file is at
-'/home/username/mysite/mysite/settings.py'
-## and your manage.py is is at '/home/username/mysite/manage.py'
-path = '/home/username/myproject'
-if path not in sys.path:
-    sys.path.append(path)
-os.environ['DJANGO_SETTINGS_MODULE'] = 'django_recipes.settings'
-## then:
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
-
-
+![img.png](img.png)
 
 Создайте базу данных MySQL и настройте соединение с базой данных в файле settings.py.
 
@@ -83,7 +64,7 @@ DATABASES = {
         'OPTIONS': {
                     'init_command': "SET NAMES 'utf8mb4';SET sql_mode = 'STRICT_TRANS_TABLES'",
                     'charset': 'utf8mb4',
-                },
+        },
     }
 }
 
