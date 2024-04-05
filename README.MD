@@ -51,7 +51,7 @@ pip install -r requirements.txt
 Теперь отредактируем wsgi файл.
 У вас должно получится примерно следующее:
 
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 Создайте базу данных MySQL и настройте соединение с базой данных в файле settings.py.
 
