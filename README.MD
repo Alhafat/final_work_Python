@@ -24,6 +24,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 Сгенерируем и добавим секретный ключ в переменные окружения чуть позже.
 Настройки доступа
 Также добавим адрес сайта в список доступных хостов:
+
 ALLOWED_HOSTS = [
 '127.0.0.1',
 ...
@@ -55,48 +56,27 @@ pip install -r requirements.txt
 
 Создайте базу данных MySQL и настройте соединение с базой данных в файле settings.py.
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '<your_username>$<your_database_name>',
-        'USER': '<your_username>',
-        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': '<your_mysql_hostname>',
-        'OPTIONS': {
-                    'init_command': "SET NAMES 'utf8mb4';SET sql_mode = 'STRICT_TRANS_TABLES'",
-                    'charset': 'utf8mb4',
-        },
-    }
-}
+![img_2.png](img_2.png)
 
 Сохраним “секреты” в окружении
 Для начала создадим секретный ключ. Для этого в консоли запускаем
 интерпретатор Python и воспользуемся функцией token_hex из модуля secrets
->>> python
-Python 3.10.5 (main, Jul 22 2022, 17:09:35) [GCC 9.4.0] on linux
-Type "help", "copyright", "credits" or "license" for more
-information.
->>> import secrets
->>> secrets.token_hex()
-'53397a811810419188d117156a1a1f324bd65cb75fc925f852d8e66f058833cc
-'
->>> exit()
+![img_3.png](img_3.png)
+
 
 Копируем токен и выходим из режима интерпретатора командой exit()
 Проверяем, что мы находимся в той же директории, что указана в wsgi файле в для
 переменной project_folder. Если нет, переходим в нужный каталог и выполняем
 команды добавления “секретов”:
-(virtualenv) 12:01~/myproject (master)$ echo "export
-SECRET_KEY=53397a811810419188d117156a1a1f324bd65cb75fc925f852d8e6
-6f058833cc" >> .env
-(virtualenv) 12:01 ~/myproject (master)$ echo "export
-MYSQL_PASSWORD=dbpassword" >> .env
+
+![img_4.png](img_4.png)
 
 
 Следующий этап - создать таблицы в базе данных MySQL на основе миграций.
 Для начала научим консоль работать с “секретами”. Введём команду
-echo 'set -a; source ~/myproject/.env; set +a' >>
-~/.virtualenvs/virtualenv/bin/postactivate
+
+![img_5.png](img_5.png)
+
 
 Примените миграции базы данных:
 
@@ -117,12 +97,7 @@ python manage.py collectstatic
 
 Для создания суперпользователя:
 
-python manage.py createsuperuser
-Имя пользователя (leave blank to use 'username'): superadmin
-Адрес электронной почты: super@admin.ru
-Password:
-Password (again):
-Superuser created successfully.
+![img_6.png](img_6.png)
 
 Теперь проект готов для запуска и работы на сервере.
 
